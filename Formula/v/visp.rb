@@ -4,7 +4,7 @@ class Visp < Formula
   url "https://visp-doc.inria.fr/download/releases/visp-3.7.0.tar.gz"
   sha256 "997f247f3702c83f0a8a6dc2f72ff98cfe3a5dcbd82f7c9f01d37ccd3b8ea97a"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
 
   livecheck do
     url "https://visp.inria.fr/download/"
@@ -51,6 +51,13 @@ class Visp < Formula
   on_linux do
     depends_on "libnsl"
     depends_on "zlib-ng-compat"
+  end
+
+  # Link OpenCV 5's relocated geometry/features modules.
+  # PR ref: https://github.com/lagadic/visp/pull/1975
+  patch do
+    url "https://github.com/lagadic/visp/commit/d57def89b50849ca191355a5d2f624e61f5d4e00.patch?full_index=1"
+    sha256 "93b53b9d44f239bc92f448b212ff14d9301773ca6acfa78dee038c1398f8a207"
   end
 
   def install
