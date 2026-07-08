@@ -4,6 +4,7 @@ class Rtabmap < Formula
   url "https://github.com/introlab/rtabmap/archive/refs/tags/0.23.8.tar.gz"
   sha256 "990029f1021e3c124c3accc7baf25b6c762c49537b9ae326965ff50b395afb11"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
