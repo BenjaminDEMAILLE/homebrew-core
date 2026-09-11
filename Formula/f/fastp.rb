@@ -19,7 +19,6 @@ class Fastp < Formula
   depends_on "libdeflate"
 
   def install
-    mkdir prefix/"bin"
     system "make"
     system "make", "install", "PREFIX=#{prefix}"
     pkgshare.install "testdata"
